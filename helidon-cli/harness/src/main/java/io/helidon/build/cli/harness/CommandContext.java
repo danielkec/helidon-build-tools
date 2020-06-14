@@ -180,6 +180,9 @@ public final class CommandContext {
                 if (Style.isStyled(message)) {
                     Log.info(message);
                 } else {
+                    if(message == null){
+                        error.printStackTrace();
+                    }
                     Log.log(level, error, Optional.ofNullable(message).orElse("Unknown error: " + error));
                 }
                 if (Log.isVerbose()) {
